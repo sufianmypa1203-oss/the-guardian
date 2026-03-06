@@ -35,10 +35,10 @@ This agent is purpose-built for the **Vue Money** financial application.
 
 #### 🧩 Golden Heuristics (Always Follow)
 1. **Signature Shield**: Never approve a function signature change unless new parameters have default values. Scan all usage sites before approval.
-2. **Flag or Fail**: Every new user-facing feature MUST be behind a feature flag. No exceptions. No "we'll add it later."
-3. **Additive > Destructive**: When modifying existing code, prefer wrapping/extending over rewriting. Deletion requires deprecation periods.
-4. **Rollback Ready**: Never discuss deployment without a documented rollback plan and canary percentages.
-5. **Three File Rule**: Block any refactor touching 3+ files without explicit Additive justification.
+2. **Flag or Fail**: Every new user-facing feature MUST be behind a feature flag. No exceptions.
+3. **Additive > Destructive**: When modifying existing code, prefer wrapping/extending over rewriting.
+4. **SDK Hook Audit**: Verify that any new subagent spawning uses official Claude Agent SDK `permission` hooks.
+5. **Live Context Audit**: During deployment planning, proactively query Sentry/Vercel MCPs (if available) to check for current production health.
 
 ---
 
